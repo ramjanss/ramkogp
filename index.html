@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gram Panchayat Wandhali</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f6fa;
+}
+
+h1,h2,h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    background: #0F1A2E;
+    color: #C6A75E;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    background: linear-gradient(90deg,#0F1A2E,#1E2D4A);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #C6A75E;
+}
+
+nav a {
+    color: #C6A75E;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide h1 {
+    background: rgba(0,0,0,0.6);
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #0F1A2E;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #C6A75E;
+}
+
+/* ===== CARDS ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 4px solid #C6A75E;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== MEMBERS ===== */
+.member img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ===== MAP ===== */
+iframe {
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0F1A2E;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+footer span {
+    color: #C6A75E;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+Gram Panchayat Wandhali | Taluka: ______ | District: ______
+</div>
+
+<header>
+<h2>Gram Panchayat Wandhali</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#members">Members</a>
+<a href="#schemes">Schemes</a>
+<a href="#history">History</a>
+<a href="#location">Location</a>
+</nav>
+</header>
+
+<!-- NOTICE BOARD SECTION -->
+<section class="notice-section">
+  <div class="notice-header">
+    🔔 Latest Announcements
+  </div>
+
+  <div class="notice-wrapper">
+
+    <div class="notice-item new">
+      <span class="notice-date">15 Mar 2026</span>
+      <a href="documents/gramsabha.pdf" target="_blank">
+        Gram Sabha Meeting on 15 March 2026 – Click to View Details
+      </a>
+    </div>
+
+    <div class="notice-item">
+      <span class="notice-date">10 Mar 2026</span>
+      <a href="#">
+        Water Supply Scheme Applications Open
+
+
+<!-- ===== SLIDER ===== -->
+<div class="slider">
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da');">
+<h1>Welcome to Gram Panchayat Wandhali</h1>
+</div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505735457409-3e87c6e36c3e');">
+<h1>Serving Village Development & Transparency</h1>
+</div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e');">
+<h1>Community Welfare & Government Schemes</h1>
+</div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1604328698692-f76ea9498e76');">
+<h1>Preserving Our Village Heritage</h1>
+</div>
+</div>
+
+<!-- ===== MEMBERS ===== -->
+<section id="members">
+<h2 class="section-title">Member <span>Body</span></h2>
+<div class="grid">
+<div class="card member">
+<img src="https://via.placeholder.com/300x200">
+<h3>Sarpanch Name</h3>
+<p>Contact: XXXXXXXX</p>
+</div>
+<div class="card member">
+<img src="https://via.placeholder.com/300x200">
+<h3>Member Name</h3>
+<p>Contact: XXXXXXXX</p>
+</div>
+</div>
+</section>
+
+<!-- ===== SCHEMES ===== -->
+<section id="schemes">
+<h2 class="section-title">Village <span>Schemes</span></h2>
+<div class="grid">
+<div class="card">
+<h3>PM Awas Yojana</h3>
+<p>Provide housing assistance for eligible families.</p>
+</div>
+<div class="card">
+<h3>Swachh Bharat Mission</h3>
+<p>Clean village development initiative.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== HISTORY ===== -->
+<section id="history">
+<h2 class="section-title">Village <span>History</span></h2>
+<div class="card">
+<p>Your village history content here.</p>
+</div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section id="location">
+<h2 class="section-title">Village <span>Location</span></h2>
+<iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK"
+width="100%" height="350"></iframe>
+</section>
+
+<footer>
+<p>© 2026 <span>Gram Panchayat Wandhali</span> | All Rights Reserved</p>
+</footer>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let index=0;
+setInterval(()=>{
+slides.forEach(s=>s.classList.remove('active'));
+index++;
+if(index>=slides.length){index=0;}
+slides[index].classList.add('active');
+},4000);
+</script>
+
+</body>
+</html>
