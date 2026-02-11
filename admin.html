@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin - Ramko Gram Panchayat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {font-family: Arial; background:#f4f6fa; padding:40px;}
+input,button {padding:10px; margin:5px; width:100%;}
+button {background:#0F1A2E; color:white; border:none;}
+.notice {background:white; padding:10px; margin:10px 0;}
+</style>
+</head>
+<body>
+
+<h2>Admin Login</h2>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<hr>
+
+<h2>Add Notice</h2>
+<input type="text" id="title" placeholder="Notice Title">
+<button onclick="addNotice()">Add Notice</button>
+
+<h3>All Notices</h3>
+<div id="noticeList"></div>
+
+<script type="module">
+
+import { db, auth } from './firebase-config.js';
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+window.login = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => alert("Login Successful"))
+    .catch(error => alert(error.message));
+};
+
+window.addNotice = async function() {
+  const title = document.getElementById("title").value;
+
+  await addDoc(collection(db, "notices"), {
+    title: title,
+    created: new Date()
+  });
+
+  alert("Notice Added");
+  loadNotices();
+};
+
+async function loadNotices() {
+  const querySnapshot = await getDocs(collection(db, "notices"));
+  const list = document.getElementById("noticeList");
+  list.innerHTML = "";
+
+  querySnapshot.forEach((docSnap) => {
+    const data = docSnap.data();
+    list.innerHTML += `
+      <div class="notice">
+        ${data.title}
+        <button onclick="deleteNotice('${docSnap.id}')">Delete</button>
+      </div>
+    `;
+  });
+}
+
+window.deleteNotice = async function(id) {
+  await deleteDoc(doc(db, "notices", id));
+  loadNotices();
+};
+
+loadNotices();
+
+</script>
+
+</body>
+</html>
