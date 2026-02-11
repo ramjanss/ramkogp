@@ -83,6 +83,32 @@ nav a:hover {
     border-radius: 8px;
 }
 
+    <section>
+<h2>🔔 Latest Notices</h2>
+<div id="notices"></div>
+</section>
+
+<script type="module">
+
+import { db } from './firebase-config.js';
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const noticeDiv = document.getElementById("notices");
+
+const querySnapshot = await getDocs(collection(db, "notices"));
+
+querySnapshot.forEach((docSnap) => {
+  const data = docSnap.data();
+  noticeDiv.innerHTML += `
+    <div style="background:white;padding:10px;margin:10px 0;">
+      ${data.title}
+    </div>
+  `;
+});
+
+</script>
+
+    
 /* ===== SECTIONS ===== */
 section {
     padding: 70px 8%;
@@ -262,3 +288,4 @@ slides[index].classList.add('active');
 
 </body>
 </html>
+
