@@ -68,3 +68,16 @@
 .notice-wrapper:hover .notice-item {
     animation-play-state: paused;
 }
+.admin-btn {
+  background: #C6A75E;
+  color: #0F1A2E;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-btn:hover {
+  background: white;
+}
+
